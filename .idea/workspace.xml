@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d24b9c2f-56bc-42af-8fd5-4d30b07a8d08" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1YRgbbKwJuI5JfZI0s3lrErW2Ov" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1582910381222" />
+    <property name="last_opened_file_path" value="D:/work/streaming/kafka-connector" />
+  </component>
+  <component name="RunManager">
+    <configuration name="EntryPoint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mohamed.kafka.learning.twitterproducer.EntryPoint" />
+      <module name="twitterconsumer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mohamed.kafka.learning.twitterproducer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.EntryPoint" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d24b9c2f-56bc-42af-8fd5-4d30b07a8d08" name="Default Changelist" comment="" />
+      <created>1582737085861</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582737085861</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="620" y="260" key="FileChooserDialogImpl" timestamp="1582923252844">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="620" y="260" key="FileChooserDialogImpl/1680.0.1920.1160/0.0.1680.1010@0.0.1680.1010" timestamp="1582923252844" />
+    <state width="1652" height="320" key="GridCell.Tab.0.bottom" timestamp="1583358536759">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1652" height="320" key="GridCell.Tab.0.bottom/1680.0.1920.1160/0.0.1680.1010@0.0.1680.1010" timestamp="1583358536759" />
+    <state width="1652" height="320" key="GridCell.Tab.0.center" timestamp="1583358536759">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1652" height="320" key="GridCell.Tab.0.center/1680.0.1920.1160/0.0.1680.1010@0.0.1680.1010" timestamp="1583358536759" />
+    <state width="1652" height="320" key="GridCell.Tab.0.left" timestamp="1583358536758">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1652" height="320" key="GridCell.Tab.0.left/1680.0.1920.1160/0.0.1680.1010@0.0.1680.1010" timestamp="1583358536758" />
+    <state width="1652" height="320" key="GridCell.Tab.0.right" timestamp="1583358536759">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1652" height="320" key="GridCell.Tab.0.right/1680.0.1920.1160/0.0.1680.1010@0.0.1680.1010" timestamp="1583358536759" />
+    <state x="505" y="204" key="NewModule_or_Project.wizard" timestamp="1582923258046">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="505" y="204" key="NewModule_or_Project.wizard/1680.0.1920.1160/0.0.1680.1010@0.0.1680.1010" timestamp="1582923258046" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1583358444000">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/1680.0.1920.1160/0.0.1680.1010@0.0.1680.1010" timestamp="1583358444000" />
+    <state x="541" y="329" key="com.intellij.ide.util.TipDialog" timestamp="1582910901029">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="541" y="329" key="com.intellij.ide.util.TipDialog/1680.0.1920.1160/0.0.1680.1010@0.0.1680.1010" timestamp="1582910901029" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
