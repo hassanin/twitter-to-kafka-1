@@ -2,27 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb18ff5f-4b3f-4c03-9c6f-6bb5756a38a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mohamed/kafka/learning/twitterproducer/IStreamable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mohamed/kafka/learning/twitterproducer/KafkaStreamer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitgnore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitgnore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/mockData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config/mockData.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/producer.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/producer-template.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mohamed/kafka/learning/twitterproducer/BasicConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mohamed/kafka/learning/twitterproducer/BasicConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mohamed/kafka/learning/twitterproducer/EntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mohamed/kafka/learning/twitterproducer/EntryPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mohamed/kafka/learning/twitterproducer/TwitterConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mohamed/kafka/learning/twitterproducer/TwitterConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/twitterconsumer.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mohamed/kafka/learning/twitterproducer/BasicConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mohamed/kafka/learning/twitterproducer/EntryPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mohamed/kafka/learning/twitterproducer/TrailClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mohamed/kafka/learning/twitterproducer/TwitterConsumer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mohamed/kafka/learning/twitterproducer/mock/MockQueryResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mohamed/kafka/learning/twitterproducer/mock/MockStatus.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -48,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitgnore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            <state>
+              <caret column="2" selection-start-column="2" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -551,8 +532,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitgnore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state>
+          <caret column="2" selection-start-column="2" selection-end-column="2" />
         </state>
       </provider>
     </entry>
