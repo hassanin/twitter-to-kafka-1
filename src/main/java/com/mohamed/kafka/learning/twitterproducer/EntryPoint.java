@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 
 public class EntryPoint {
     private static final Logger logger = LoggerFactory.getLogger(EntryPoint.class);
-    public static void main(String[] args) throws FileNotFoundException, IOException {
+    public static void main(String[] args) throws FileNotFoundException, IOException, InterruptedException {
         logger.info("Starting ... on Thread ID {}",Thread.currentThread().getId());
         String mainConfigYaml="";
         if(args.length > 0)
@@ -40,9 +40,10 @@ public class EntryPoint {
 //        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
 //
 //        }));
-        Scanner scanner = new Scanner(System.in);
-//...
-        String name = scanner.nextLine();
+
+//        Scanner scanner = new Scanner(System.in);
+//        String name = scanner.nextLine();
+        Thread.sleep(5000);
         logger.info("Exiting main method");
         /** Region for shutting down the application*/
         logger.info("Starting shutdown hook on thread {}", Thread.currentThread().getId());

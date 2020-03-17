@@ -5,27 +5,31 @@ import org.slf4j.LoggerFactory;
 import twitter4j.*;
 import twitter4j.conf.ConfigurationBuilder;
 
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 public class TwitterConsumer {
     private static final org.slf4j.Logger logger = LoggerFactory.getLogger(TwitterConsumer.class);
-    private Thread twtiiterConsumerThread,kafkaProducerThread;
-    Deque<Status> mainDeque;
-    private final int maxQueueLength=10;
+    private Thread twtiiterConsumerThread,kafkaProducerThread,diagnosticsThread;
+    private volatile Deque<Status> mainDeque;
+    private final int maxQueueLength=200;
     private int pauseCounter=1;
     private int backuoDuration=100; // 100 milliseconds
     private final Twitter twitter;
     private final BasicConfig basicConfig;
     private volatile boolean shouldShutdown=false;
-    private CountDownLatch AllThreadsLatch = new CountDownLatch(2); // we have Kafka and Twitter
+    private CountDownLatch AllThreadsLatch = new CountDownLatch(3); // we have Kafka and Twitter
     private final boolean debugMode=true;
-
+    private List<String> diagnosticsStrings = new ArrayList<>();
     public TwitterConsumer(BasicConfig basicConfig)
     {
         this.basicConfig=basicConfig;
@@ -37,8 +41,12 @@ public class TwitterConsumer {
         kafkaProducerThread = new Thread(()-> {
             mainKakaLoop();
         });
+        diagnosticsThread = new Thread(()->{
+            runDiagnosticsLoop();
+        });
         twtiiterConsumerThread.start();
         kafkaProducerThread.start();
+        diagnosticsThread.start();
     }
     public boolean shutDownConnector()
     {
@@ -51,6 +59,7 @@ public class TwitterConsumer {
             boolean result = AllThreadsLatch.await(timeout, timeUnit);
 //            kafkaProducerThread.interrupt();
             twtiiterConsumerThread.interrupt();
+//            writeDiagnosticsToFile();
             if(result == true) {
                 logger.info("All Threads shutdown successfully!!");
                 return true;
@@ -66,14 +75,79 @@ public class TwitterConsumer {
         }
         return  true;
     }
+    private void writeDiagnosticsToFile()
+    {
+        try {
+            String fileName = "./output/out.txt";
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+            diagnosticsStrings.forEach(s ->{
+                try {
+                    writer.write(s + " ");
+                }
+                catch (Exception ex)
+                {
+                    logger.error("Caught exception wriiting line by line diags to disk {}",ex.getMessage());
+                }
+            });
+            writer.flush();
+        }
+        catch (Exception ex)
+        {
+            logger.error("Caught exception when writing diagnostics to file");
+        }
+    }
+    private void runDiagnosticsLoop()
+    {
+        logger.info("Run Diagnostics running in Thread {}",Thread.currentThread().getId());
+        while(!shouldShutdown)
+        {
+            try {
+                diagnosticsStrings.add(" " + mainDeque.size());
+                Thread.sleep(50);
+            }
+            catch (InterruptedException exz)
+            {
+                logger.error("Caught interrupted exception in runDiagnostics");
+            }
+        }
+        logger.info("Run Diagnostics is closing down");
+        writeDiagnosticsToFile();
+        AllThreadsLatch.countDown();
+    }
+    public String getDiagnostics()
+    {
+        String result="";
+        if(mainDeque != null)
+        {
+            int size = mainDeque.size();
+            result="Current data in queue is" + size;
+        }
+        return result;
+    }
     private void mainKakaLoop()
     {
         logger.info("Started main Kakfa Loop thread with Thread ID {}",Thread.currentThread().getId());
+        IStreamable producer = new KafkaStreamer(basicConfig);
         while (shouldShutdown != true)
         {
+
             try {
                 logger.info("Kakfa Doing stuff");
-                Thread.sleep(1000);
+
+                if(mainDeque.size() > 0)
+                {
+                    Status status = mainDeque.getFirst();
+                    boolean result = producer.addMsg(Long.toString(status.getId()),status.getText());
+                    if(result == true)
+                    {
+                        logger.info("added tweet successfully yo Kakfa");
+                        mainDeque.removeFirst();
+                    }
+                }
+                else {
+                    logger.info("No Data found, sleeping for 1 seconds");
+                    Thread.sleep(1000); // implement monitor object
+                }
             }
             catch (InterruptedException ex)
             {
@@ -164,6 +238,7 @@ public class TwitterConsumer {
         }
         else {
             mainDeque.addLast(status);
+            pauseCounter=0;
             return true;
         }
         return true;

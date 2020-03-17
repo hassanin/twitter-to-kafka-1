@@ -20,6 +20,7 @@ public class BasicConfig {
     public final String searchQuery;
     public final Boolean useMockData;
     public final String mockFilePath;
+    public final String kafkaToic;
     private static final org.slf4j.Logger logger = LoggerFactory.getLogger(TrailClass.class);
     public BasicConfig(String YamlFileConfig)  throws FileNotFoundException, IllegalArgumentException
     {
@@ -37,6 +38,7 @@ public class BasicConfig {
             searchQuery = (String) obj.getOrDefault("searchQuery",nullValue);
             useMockData = Boolean.parseBoolean((String) obj.getOrDefault("useMockData","True"));
             mockFilePath=(String) obj.getOrDefault("mockFilePath","./mockData.txt");
+            kafkaToic = (String) obj.getOrDefault("kafkaToic","test-56");
             if(OAuthConsumerKey == nullValue || AuthConsumerSecret == nullValue || OAuthAccessToken == nullValue || OAuthAccessTokenSecret==nullValue
             || kafkaBrokerList == nullValue || searchQuery == nullValue)
             {
