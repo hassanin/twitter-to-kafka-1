@@ -1,8 +1,0 @@
-OAuthConsumerKey: "jC9uzmcEvl1L8jRXRuQVvoJld"
-AuthConsumerSecret: "S5laqFw6eEXLbJc5jx9wVNDes3taO8uVHOtKZxhllh4HjVkmvE"
-OAuthAccessToken: "2401995602-nabkHDxHOB4zE9NOzoUlvvlyHzxRJF5ZPiAspne"
-OAuthAccessTokenSecret: "Qhdx5an54Df8U2AVUK9ARxcBoZISsMhh0AmoJ1cJEhHby"
-kafkaBrokerList: "mhassani-ndebian:9092"
-kafkaToic: "test-45"
-searchQuery: "Pelosi"
-mockFilePath: "./config/mockData.txt"
