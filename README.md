@@ -8,8 +8,11 @@ To run the connector, compile the maven project and pass a YAML input file conta
 > Twitter: See https://developer.twitter.com/en/apply-for-access to get your own developer API keys
 
 OAuthConsumerKey: "GETFROMTWITTER"
+
 AuthConsumerSecret: "GETFROMTWITTER"
+
 OAuthAccessToken: "GETFROMTWITTER"
+
 OAuthAccessTokenSecret: "GETFROMTWITTER"
 > The Kafka Beoker to send tweets to
 
