@@ -31,19 +31,22 @@ public class EntryPoint {
             mainConfigYaml=args[0];
             logger.info("Main Config file passed as {}",mainConfigYaml);
         }
+        else {
+            logger.error("Please run the program and provide a valid YMAL file config as the first paraemter");
+            System.exit(1);
+        }
         String dir = System.getProperty("user.dir");
         logger.info("Working Directory is {}",dir);
-//        try {
-            BasicConfig basicConfig = new BasicConfig(mainConfigYaml);
-            logger.info(basicConfig.AuthConsumerSecret);
-            TwitterConsumer tw = new TwitterConsumer(basicConfig);
+        BasicConfig basicConfig = new BasicConfig(mainConfigYaml);
+        TwitterConsumer tw = new TwitterConsumer(basicConfig);
+        // Optional Adding ShutDown Hook below TODO
 //        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
 //
 //        }));
 
-//        Scanner scanner = new Scanner(System.in);
-//        String name = scanner.nextLine();
-        Thread.sleep(5000);
+        System.out.println("Press any key to stop the connector");
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine();
         logger.info("Exiting main method");
         /** Region for shutting down the application*/
         logger.info("Starting shutdown hook on thread {}", Thread.currentThread().getId());
@@ -59,16 +62,6 @@ public class EntryPoint {
         }
         logger.info("Good Bye...... :)");
 //        System.exit(0);
-        /**End Rdsegion*/
-
-//            System.in.read();
-//        }
-//        catch (Exception ex)
-//        {
-//            logger.error("Caught error {}",ex.getMessage());
-//            logger.error(ex.getStackTrace().toString());
-//        }
-        //Thread.currentThread().setContextClassLoader(null);
 
     }
 
